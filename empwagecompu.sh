@@ -1,4 +1,7 @@
 #!/bin/bash
+function workhrs(){
+	echo "work hours is  8"
+}  
 fulltime=1
 parttime=2
 emprateperhrs=20
@@ -21,3 +24,4 @@ case "$check" in
 			;;
 
 esac
+workhrs
