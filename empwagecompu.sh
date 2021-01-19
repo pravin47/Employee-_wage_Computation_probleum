@@ -1,12 +1,19 @@
 #!/bin/bash
-ispresent=1
+fulltime=1
+parttime=2
 emprateperhrs=20
-emprateperhrs=8
-random=$((RANDOM%2))
-if (( $random ==  $ispresent ))
-then
-	salary=$(( emprateperhrs*emprateperhrs ))
-	echo "daily employee wage is :" $salary
-else
-	echo "employee is not present"
-fi
+empfulldayhrs=8
+empparttime=8
+check=$((RANDOM%3))
+case "$check" in
+		$fulltime)  salary=$(($emprateperhrs*$emprateperhrs))
+				echo "full time salary is :" $salary
+			;;
+		$parttime) salary=$(($empparttime*$emprateperhrs))
+			      echo "part time salary is :" $salary
+			;;
+		    *)
+				echo "employee is absent"
+			;;
+
+esac
