@@ -1,8 +1,12 @@
 #!/bin/bash
+ispresent=1
+emprateperhrs=20
+emprateperhrs=8
 random=$((RANDOM%2))
-if (( $random ==  1 ))
+if (( $random ==  $ispresent ))
 then
-	echo "employee is present"
+	salary=$(( emprateperhrs*emprateperhrs ))
+	echo "daily employee wage is :" $salary
 else
 	echo "employee is not present"
 fi
